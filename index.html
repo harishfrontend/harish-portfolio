@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>portfolio</title>
+     <link rel="stylesheet" href="style.css">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<script>
+function showSelection(id){
+
+    const sections = document.querySelectorAll('.section');
+
+    // 🔥 HOME = show ALL sections
+    if(id === "home"){
+        sections.forEach(sec => {
+            sec.classList.remove('hide');
+            sec.classList.add('active');
+        });
+    } 
+    else{
+        sections.forEach(sec => {
+            sec.classList.remove('active','hide');
+
+            if(sec.id !== id){
+                sec.classList.add('hide');
+            }
+        });
+
+        const activeSection = document.getElementById(id);
+
+        if(!activeSection){
+            console.error("Section not found:", id);
+            return;
+        }
+
+        activeSection.classList.add('active');
+
+        // animation
+        activeSection.style.animation = "none";
+        activeSection.offsetHeight;
+        activeSection.style.animation = "fadeSlide 0.6s ease";
+    }
+
+    // navbar highlight
+    document.querySelectorAll('.nav1 a').forEach(link=>{
+        link.classList.remove('active');
+    });
+
+    const activeLink = document.querySelector(`.nav1 a[onclick="showSelection('${id}')"]`);
+    if(activeLink){
+        activeLink.classList.add('active');
+    }
+}
+</script>
+
+<body>
+    <nav class="navbar">
+    <div class="nav">
+        <h1>Harish</h1>
+        </div>
+        <div class="nav1">
+        <a href="#" onclick="showSelection('home')">Home</a></li>
+        <a href="#" onclick="showSelection('about')">About</a></li>
+         <a href="#" onclick="showSelection('skills')">Skills</a></li>
+        <a href="#" onclick="showSelection('project')">project</a></li>
+        <a href="#" onclick="showSelection('contact')">contact</a></li>
+        </div>
+        </nav>
+        
+    <div id="home" class="section active">
+        <p class="name1">Hi,I'm Harish</p>
+        <p class="name2">Full Stack Developer</p>
+        <p class="name3">Crafting modern ,responsive,and user-friendly <br>
+         websites with passion and precision</p>
+    </div>
+    <div class="down">
+        <button type="button" class="btn">Download resume<img src="icons8-download-32.png" ></button>
+        <div class="git"><img src="/icons8-github-16.png">
+        </div>
+        <div class="python">
+            <img src="/icons8-python-16 (1).png">    
+        </div>
+        <div class="js">
+         <img src="/icons8-javascript-16 (1).png">
+        </div>
+    </div>
+     <div id="about" class="section">
+    <h1 class="www">About Me</h1>
+
+    <div class="about1">
+      I'M Harish.M
+    </div>
+
+    <div class="hero">
+        <p>I'm harish ,a passionate and motivated full stack Developer specializing in python<br>
+        i have strong knowledge in both front-end and back end development...</p>
+    </div>
+    <div class="web">
+        <p>Website development </p>
+    </div>
+   
+</div>
+
+ 
+    <div id="skills" class="section">
+    <h1 class="www1">skills</h1>
+
+    <div class="logo">
+
+        <div class="skill">
+            <img src="/html-5.png" height="40px"width="40px">
+            <div class="dots">
+                <span class="dot filled"></span>
+                <span class="dot filled"></span>
+                <span class="dot filled"></span>
+                <span class="dot filled"></span>
+                <span class="dot filled"></span>
+                <span class="dot filled"></span>
+                <span class="dot filled"></span>
+                <span class="dot filled"></span>
+                <span class="dot filled"></span>
+                <span class="dot"></span>
+            </div>
+        </div>
+
+    
+        <div class="skill">
+            <img src="/css-3.png" height="50px" width="50px">
+            <div class="dots blue">
+                <span class="dot filled"></span>
+                <span class="dot filled"></span>
+                <span class="dot filled"></span>
+                <span class="dot filled"></span>
+                <span class="dot filled"></span>
+                <span class="dot filled"></span>
+                <span class="dot filled"></span>
+                <span class="dot filled"></span>
+                <span class="dot"></span>
+                <span class="dot">
+                
+             </div>   
+                
+        </div>
+       
+
+        <div class="skill">
+             <img src="/js.png" height="40px" width="40px" >
+            <div class="yellow">
+                <div class="dots yellow">
+                    <span class="dot filled"></span>
+                    <span class="dot filled"></span>
+                    <span class="dot filled"></span>
+                    <span class="dot filled"></span>
+                    <span class="dot filled"></span>
+                    <span class="dot filled"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot"></span>
+                    <span class="dot">
+            
+                </div>   
+
+            </div>
+        </div>
+        <div class="skill">
+             <img src="/python.png" height="50px" width="50px">
+            <div class="dots cyan">
+               <span class="dot filled"></span>
+                <span class="dot filled"></span>
+                <span class="dot filled"></span>
+                <span class="dot filled"></span>
+                <span class="dot filled"></span>
+                <span class="dot filled"></span>
+                <span class="dot filled"></span>
+                <span class="dot "></span>
+                <span class="dot"></span>
+                <span class="dot">
+            </div>
+        </div>
+        <div class="skill">
+          <img src="/django.png.png" height="50px" width="50px">
+           <div class=" dots red">
+                <span class="dot filled"></span>
+                <span class="dot filled"></span>
+                <span class="dot filled"></span>
+                <span class="dot filled"></span>
+                <span class="dot filled"></span>
+                <span class="dot filled"></span>
+                <span class="dot filled"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+            </div>
+      </div>
+      
+    </div>
+</div>
+
+<div id="contact" class="section">
+
+    <div class="contact">
+       <h1>Need Support?</h1>
+       <h4>Contact as if you need futher assistance</h4>
+    </div>
+
+    <div class="contact_text">
+        <div class="abc">
+            <h1>Bringing your ideas to life.</h1>
+            <h2>Let's turn your vision into reality</h2>
+        </div>
+
+        <div class="abc1">
+            <form class="form-box">
+                <input type="text" placeholder="Your Name">
+                <input type="text" placeholder="Your Email">
+                <textarea placeholder="Message here"></textarea>
+                <button type="submit">Send</button>
+            </form>
+        </div>
+    </div>
+
+</div>
+       
+    </div>
+    <footer class="abc2">
+        <p>@Copyrights2025,All Rights Reserve</p>
+    </footer>
+
+    
+   
+</body>
+</html>
